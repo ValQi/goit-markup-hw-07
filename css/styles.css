@@ -535,13 +535,15 @@ fill: var(--accent-color);
 }
 .footer-container {
   display: flex;
-  align-items: baseline;
+    align-items: baseline;
+    flex-wrap: wrap;
+    text-align: center;
 }
 .logo-container {
-  gap: 120px;
+  /* gap: 120px; */
 }
 .social-med {
-  margin-left: 120px;
+  /* margin-left: 120px; */
 }
 .social-text {
 font-weight: 500;
@@ -616,8 +618,8 @@ margin-bottom: 16px;
 }
 
 .sub-form {
-  display: flex;
-  gap: 24px;
+  /* display: flex;
+  gap: 24px; */
 }
 
 .footer-label {
@@ -643,8 +645,8 @@ margin-bottom: 16px;
   color: #ffffff;
 }
 .footer-form {
-  margin-left: 80px;
-  flex-direction: row;
+  /* margin-left: 80px;
+  flex-direction: row; */
 }
 
 .footer-form input {
