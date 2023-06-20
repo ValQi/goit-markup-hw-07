@@ -18,10 +18,10 @@
 </head>
 
 <body>
-    <!--Header-->
-    <!-- <header class="header"> -->
+    <!-- Header-->
+    <header class="header">
         <!-- Nav -->
-        <!-- <div class="container header-all">
+        <div class="container header-all">
             <nav class="nav header-menu">
                 <a class="logo link" href=./index.html>Web<span class="nav-logo">Studio</span></a>
                 <ul class="nav-menu list">
@@ -29,9 +29,9 @@
                     <li class="item"><a href="./portfolio.html" class="nav-link link">Portfolio</a></li>
                     <li class="item"><a href="" class="nav-link link">Contacts</a></li>
                 </ul>
-            </nav> -->
+            </nav>
             <!-- Address -->
-            <!-- <address class="address header-menu">
+            <address class="address header-menu">
                 <ul class="address-list list">
                     <li class="item">
                         <a href="mailto:info@devstudio.com" class="address-link link">info@devstudio.com</a>
@@ -41,8 +41,76 @@
                     </li>
                 </ul>
             </address>
+            <button type="button" class="mobile-menu-hamburger">
+                <svg class="hamburger" width="32" height="22">
+                    <use href="./images/icons.svg#menu-hamburger"></use>
+                </svg>
+            </button>
+            <button type="button" class="modal-close-btn">
+                <svg class="modal-close-btn-icon" width="8" height="8">
+                    <use href="./images/icons.svg#close"></use>
+                </svg>
+            </button>
         </div>
-    </header> -->
+        <div class="mob-menu js-menu-container is-open">
+            <div class="container mobile-menu-container">
+            <button type="button" class="modal-close-btn">
+                <svg class="modal-close-btn-icon" width="8" height="8">
+                    <use href="./images/icons.svg#close"></use>
+                </svg>
+            </button>
+            <nav class="mob-nav-menu">
+            <ul class="mob-menu-list list">
+                <li class="item"><a href="./index.html" class="mob-link link current">Studio</a></li>
+                <li class="item"><a href="./portfolio.html" class="mob-link link">Portfolio</a></li>
+                <li class="item"><a href="" class="mob-link link">Contacts</a></li>
+            </ul>
+            </nav>
+            <div class="mob-fix">
+            <address class="mob-adress-menu">
+            <ul class="mob-address-list list">
+                <li class="item">
+                    <a href="tel:+110001111111" class="mob-address-tel link">+11 (000) 111-11-11</a>
+                </li>
+                <li class="item">
+                    <a href="mailto:info@devstudio.com" class="mob-address-mail link">info@devstudio.com</a>
+                </li>
+            </ul>
+            </address>
+            <ul class="mob-web-list list">
+                <li class="social-item">
+                    <a class="social-link" href="">
+                        <svg class="social-svg" width="24" height="24">
+                            <use href="./images/icons.svg#instagram"></use>
+                        </svg>
+                    </a>
+                    </li>
+                    <li class="social-item">
+                    <a class="social-link" href="">
+                        <svg class="social-svg" width="24" height="24">
+                            <use href="./images/icons.svg#twitter"></use>
+                        </svg>
+                    </a>    
+                    </li>
+                    <li class="social-item">
+                    <a class="social-link" href="">
+                        <svg class="social-svg" width="24" height="24">
+                            <use href="./images/icons.svg#facebook"></use>
+                        </svg>
+                    </a>
+                    </li>
+                    <li class="social-item">
+                    <a class="social-link" href="">
+                        <svg class="social-svg" width="24" height="24">
+                            <use href="./images/icons.svg#linkedin"></use>
+                        </svg>
+                    </a>
+                    </li>
+            </ul>
+            </div>
+           </div>
+        </div>
+    </header>
     <main>
         <!-- Hero -->
         <section class="hero-section">
@@ -126,6 +194,13 @@
                 <h2 class="team-title">Our Team</h2>
                 <ul class="team-card list">
                     <li class="team-image">
+                        <picture>
+                            <source 
+                            srcset="
+                            ./images/Photo-of-a-Product-Designer.jpg 1x,
+                            ./images/first-person-2x.jpg 2x"
+                            />
+                        </picture>
                         <img src="./images/Photo-of-a-Product-Designer.jpg" alt="Photo-of-a-Product-Designer"
                             width="264">
                         <div class="team-text-all">
@@ -164,6 +239,12 @@
                         </div>
                     </li>
                     <li class="team-image">
+                        <picture>
+                            <source 
+                            srcset="
+                            ./images/Photo-of-a-Frontend-Developer.jpg 1x,
+                            ./images/second-person-2x.jpg 2x"/>
+                        </picture>
                         <img src="./images/Photo-of-a-Frontend-Developer.jpg" alt="Photo-of-a-Frontend-Developer"
                             width="264">
                         <div class="team-text-all">
@@ -202,6 +283,12 @@
                         </div>
                     </li>
                     <li class="team-image">
+                        <picture>
+                            <source 
+                            srcset="
+                            ./images/Photo-of-a-Marketer.jpg 1x,
+                            ./images/third-person-2x.jpg 2x"/>
+                        </picture>
                         <img src="./images/Photo-of-a-Marketer.jpg" alt="Photo-of-a-Marketer" width="264">
                         <div class="team-text-all">
                             <h3 class="team-head">Camila Garcia</h3>
@@ -239,6 +326,12 @@
                         </div>
                     </li>
                     <li class="team-image">
+                        <picture>
+                            <source 
+                            srcset="
+                            ./images/Photo-of-a-UI-Designer.jpg 1x,
+                            ./images/four-person-2x.jpg 2x"/>
+                        </picture>
                         <img src="./images/Photo-of-a-UI-Designer.jpg" alt="Photo-of-a-UI-Designer" width="264">
                         <div  class="team-text-all">
                             <h3 class="team-head">Daniel Wilson</h3>
