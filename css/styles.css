@@ -94,8 +94,39 @@ img {
 .hamburger {
   stroke: var(--secondary-color-text);
 }
+/* ................................................CLOSE-BTN-MOBILE............................................. */
+.close-btn {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e7e9fc;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 0;
+  cursor: pointer;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.close-btn:hover,
+.close-btn:focus {
+  background-color: #404bbf;
+  border: none;
+}
+.close-btn:hover,
+.close-btn:focus {
+  fill: #ffffff;
+  border: none;
+}
 /* ........................................MOBILE-MENU................................................ */
+
 .mob-menu {
+  padding-right: 35px;
   padding-left: 40px;
   padding-top: 80px;
   padding-bottom: 40px;
@@ -107,6 +138,18 @@ img {
   height: 100vh;
 
   background-color: var(--background-color);
+  overflow-y: scroll;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+  visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
 }
 .mobile-menu-container {
   display: flex;
@@ -122,7 +165,13 @@ img {
   font-weight: 700;
   line-height: 1.11;
   letter-spacing: 0.02em;
-
+}
+.mob-link {
+  color: var(--secondary-color-text);
+}
+.mob-link:hover,
+.mob-link:focus {
+  color: var(--accent-color);
 }
 .mob-address-list {
   font-style: normal;
@@ -205,7 +254,7 @@ color: #434455;
 }
 .current::after {
   position: absolute;
-  display: inline;
+  display: none;
   content: "";
   background-color: var(--accent-color);
   top: 68px;
@@ -793,7 +842,7 @@ color: #434455;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
-  width: 408px;
+  max-width: 392px;
   min-height: 584px;
   border-radius: 4px;
   background: #fcfcfc;
@@ -801,7 +850,8 @@ color: #434455;
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  padding: 72px 24px 24px;
+  /* padding: 72px 24px 24px; */
+  padding: 72px 18px 24px 18px;
 }
 .modal-close-btn {
   position: absolute;
@@ -1030,6 +1080,14 @@ color: #434455;
   .mob-address-tel {
     font-size: 25px;
   }
+  .mob-web-list {
+    justify-content: space-between;
+  }
+  
+  @media screen and (max-width: 428px) {
+.modal {
+    width: 90%; }
+}
 }
 @media screen and (max-width: 767px) {
   .mob-menu > .container {
@@ -1037,6 +1095,11 @@ color: #434455;
     height: 100%;
     padding: 0;
   }
+  /* .mob-menu > .is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  } */
 }
 @media screen and (max-width: 1158px) {
   .svg-back-features {
@@ -1052,6 +1115,9 @@ color: #434455;
     max-width: 768px;
   }
   /* ......................................................HEADER.................................................... */
+  .nav .logo {
+    margin-right: 120px;
+  }
   .header-all {
     display: flex;
   }
@@ -1081,20 +1147,32 @@ color: #434455;
     margin-right: 40px;
   }
   .address {
+    align-items: center;
     font-style: normal;
-    margin-left: auto;
+    margin-left: 121px;
   }
   .address-list {
-    display: flex;
+    display: block;
   }
   .address-list .item:not(:last-child) {
-    margin-right: 40px;
+    /* margin-right: 40px; */
+    margin-bottom: 12px;
   }
   .address .address-link {
-    font-size: 16px;
-    line-height: 1.5;
+    margin-left: auto;
+    font-size: 12px;
+    line-height: 1.17;
     color: var(--primary-text-color);
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .current::after {
+    display: inline;
+  }
+  .mobile-menu-hamburger {
+    display: none;
+  }
+  .mob-menu {
+    display: none;
   }
 
   /* ........................................................HERO-TABLET......................................................... */
@@ -1162,12 +1240,32 @@ color: #434455;
     width: 264px;
     margin-bottom: auto;
   }
+  /* MODAL */
+  .modal {
+    padding: 72px 25px 24px 23px;
+    min-width: 408px;
+    min-height: 584px;
+}
 }
 /* ..............................................................DESKTOP......................................... */
 @media screen and (min-width: 1158px) {
   .container {
     max-width: 1158px;
   }
+  /* HEADER */
+  .nav .logo {
+    margin-right: 72px;
+  }
+  .address-list {
+    display: flex;
+  }
+  .address-list .item:not(:last-child) {
+    margin-right: 40px;
+    margin-bottom: 0;
+  }
+  .address .address-link {
+    font-size: 16px;
+    line-height: 1.5; }
   .hero-section {
     max-width: 1440px;
     height: 600px;
